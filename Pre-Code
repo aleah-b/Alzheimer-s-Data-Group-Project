@@ -1,0 +1,110 @@
+#Core Data & Math
+import numpy as np
+import pandas as pd
+
+#Visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Statistics & Machine Learning
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Configure visualization styles
+sns.set_theme(style="whitegrid")
+alzdataset = pd.read_csv('/Users/ikram/Downloads/Data Analysis Projects/alzheimers_disease_data.csv')
+miniage = min(alzdataset.Age)
+maxage=max(alzdataset.Age) 
+print(f'The ages of the patients within our dataset is {miniage} to {maxage}.')
+females= alzdataset['Gender'].value_counts()[1]
+males = alzdataset['Gender'].value_counts()[0]
+
+print(f"Our population includes {females} women and {males} men.")
+
+# Get percentages of each unique value
+femalepercentages = alzdataset['Gender'].value_counts(normalize=True)[1] * 100
+malepercentages = alzdataset['Gender'].value_counts(normalize=True)[0] * 100
+print(f'In our dataset, {femalepercentages: .2f}% are women and {malepercentages: .2f}% are men.')
+for alzdataset.Gender = 1, 
+    alzdataset.Diagnosis = 1,
+then
+    avg(alzdataset.Age)
+    avg(SleepQuality)
+    avg(BMI)
+avg(CholesterolTriglycerides)
+    fpercentsmoke = alzdataset['Smoking'].value_counts(normalize=True)[1] * 100
+    fpercenthistory = alzdataset['FamilyHistoryAlzheimers'].value_counts(normalize=True)[1] * 100
+
+#counting education and ethnicity levels within Women who are diagnosed with Alzheimers
+f_age=[]
+f_sleepquality=[]
+f_bmi=[]
+f_edu=[]
+
+for i in range(len(alzdataset['Gender'])):
+    if alzdataset['Gender'][i]==1:
+        if alzdataset['Diagnosis'][i]==1:
+            averageagewalz=np.mean(alzdataset.Age)
+            avgsqwalz=np.mean(alzdataset.SleepQuality)
+            avgbmiwalz=np.mean(alzdataset.BMI)
+            avgctwalz=np.mean(alzdataset.CholesterolTriglycerides)
+            fpercentsmoke = alzdataset['Smoking'].value_counts(normalize=True)[1] * 100
+            fpercenthistory = alzdataset['FamilyHistoryAlzheimers'].value_counts(normalize=True)[1] * 100
+            
+            f_age=np.append(f_age,alzdataset['Age'][i])
+            f_sleepquality=np.append(f_sleepquality,alzdataset['SleepQuality'][i])
+            f_bmi=np.append(f_bmi,alzdataset['BMI'][i])
+            f_edu=np.append(f_edu,alzdataset['EducationLevel'][i])
+            
+
+print(int(averageagewalz))
+print(f'{avgsqwalz: .2f}')
+print(f'{avgbmiwalz: .2f}')
+print(f'{avgctwalz: .2f}')
+print(f'{fpercentsmoke: .2f}%')
+print(f'{fpercenthistory: .2f}%')
+for i in range(len(alzdataset['Gender'])):
+    if alzdataset['Gender'][i]==1:
+        if alzdataset['Diagnosis'][i]==1:
+            a=alzdataset['EducationLevel'].value_counts()
+            b=alzdataset['Ethnicity'].value_counts()
+
+print(f_edu)
+for i in range(len(alzdataset['Gender'][i]==1)):
+        if alzdataset['Diagnosis'][i]==1:
+            averageagewalz=np.mean(alzdataset.Age)
+            avgsqwalz=np.mean(alzdataset.SleepQuality)
+            avgbmiwalz=np.mean(alzdataset.BMI)
+            avgctwalz=np.mean(alzdataset.CholesterolTriglycerides)
+            fpercentsmoke = alzdataset['Smoking'].value_counts(normalize=True)[1] * 100
+            fpercenthistory = alzdataset['FamilyHistoryAlzheimers'].value_counts(normalize=True)[1] * 100
+            
+            f_age=np.append(f_age,alzdataset['Age'][i])
+            f_sleepquality=np.append(f_sleepquality,alzdataset['SleepQuality'][i])
+            f_bmi=np.append(f_bmi,alzdataset['BMI'][i])
+            f_edu=np.append(f_edu,alzdataset['EducationLevel'][i])
+            
+
+print(int(averageagewalz))
+print(f'{avgsqwalz: .2f}')
+print(f'{avgbmiwalz: .2f}')
+print(f'{avgctwalz: .2f}')
+print(f'{fpercentsmoke: .2f}%')
+print(f'{fpercenthistory: .2f}%')
+subset_alz = alzdataset.query("Gender == 1 and Diagnosis == 1")
+averageagewalz=np.mean(subset_alz.Age)
+avgsqwalz=np.mean(subset_alz.SleepQuality)
+avgbmiwalz=np.mean(subset_alz.BMI)
+avgctwalz=np.mean(subset_alz.CholesterolTriglycerides)
+fpercentsmoke = subset_alz['Smoking'].value_counts(normalize=True)[1] * 100
+fpercenthistory = subset_alz['FamilyHistoryAlzheimers'].value_counts(normalize=True)[1] * 100
+
+print(int(averageagewalz))
+print(f'{avgsqwalz: .2f}')
+print(f'{avgbmiwalz: .2f}')
+print(f'{avgctwalz: .2f}')
+print(f'{fpercentsmoke: .2f}%')
+print(f'In the dataset {fpercenthistory: .2f}% of the ')
+subset_alz = [(alzdataset['Gender'] == 1) & (alzdataset['Diagnosis'] ==1)] 
