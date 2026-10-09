@@ -106,5 +106,35 @@ print(f'{avgsqwalz: .2f}')
 print(f'{avgbmiwalz: .2f}')
 print(f'{avgctwalz: .2f}')
 print(f'{fpercentsmoke: .2f}%')
-print(f'In the dataset {fpercenthistory: .2f}% of the ')
+print(f'{fpercenthistory: .2f}%')
 subset_alz = [(alzdataset['Gender'] == 1) & (alzdataset['Diagnosis'] ==1)] 
+
+edu=subset_alz['EducationLevel'].value_counts()
+ethn=subset_alz['Ethnicity'].value_counts()
+print(edu)
+len(subset_alz)
+edu.index = ['None', 'High School' , 'Bachelors', 'Higher']
+print(edu)
+
+fpercentnone = subset_alz['EducationLevel'].value_counts(normalize=True)[0] * 100
+fpercenthighschool = subset_alz['EducationLevel'].value_counts(normalize=True)[1] * 100
+fpercentbachelors = subset_alz['EducationLevel'].value_counts(normalize=True)[2] * 100
+fpercenthigher = subset_alz['EducationLevel'].value_counts(normalize=True)[3] * 100
+
+print(f'{fpercentnone: .2f}%') #None (Percentage) 
+print(f'{fpercenthighschool: .2f}%') #High School (Percentage) 
+print(f'{fpercentbachelors: .2f}%') #Bachelors (Percentage) 
+print(f'{fpercenthigher: .2f}%') #Higher (Percentage) 
+
+ethn.index = ['Caucasian', 'African American' , 'Asian', 'Other']
+print(ethn)
+
+fpercentnone1 = subset_alzwhole['EducationLevel'].value_counts(normalize=True)[0] * 100
+fpercenthighschool1 = subset_alzwhole['EducationLevel'].value_counts(normalize=True)[1] * 100
+fpercentbachelors1 = subset_alzwhole['EducationLevel'].value_counts(normalize=True)[2] * 100
+fpercenthigher1 = subset_alzwhole['EducationLevel'].value_counts(normalize=True)[3] * 100
+
+print(f'{fpercentnone1: .2f}%') #None (Percentage) 
+print(f'{fpercenthighschool1: .2f}%') #High School (Percentage) 
+print(f'{fpercentbachelors1: .2f}%') #Bachelors (Percentage) 
+print(f'{fpercenthigher1: .2f}%') #Higher (Percentage) 
