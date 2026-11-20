@@ -138,3 +138,51 @@ print(f'{fpercentnone1: .2f}%') #None (Percentage)
 print(f'{fpercenthighschool1: .2f}%') #High School (Percentage) 
 print(f'{fpercentbachelors1: .2f}%') #Bachelors (Percentage) 
 print(f'{fpercenthigher1: .2f}%') #Higher (Percentage) 
+
+# Define color palette
+group_colors = {
+    "Control": "#D1C1F2",
+    "Men with Alzheimer's": "#B7C297",
+    "Women with Alzheimer's": "#FFCAE9"
+}
+
+# Set group order
+group_order = [
+    "Control",
+    "Men with Alzheimer's",
+    "Women with Alzheimer's"
+]
+
+# Variables to compare
+variables = ["MMSE", "FunctionalAssessment", "ADL"]
+
+# Create box plots
+fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+
+for ax, variable in zip(axes, variables):
+
+    sns.boxplot(
+        data=df[df["Comparison_Group"] != "Other"],
+        x="Comparison_Group",
+        y=variable,
+        order=group_order,
+        hue="Comparison_Group",
+        hue_order=group_order,
+        palette=group_colors,
+        legend=False,
+        ax=ax
+    )
+
+    ax.set_title(f"{variable} by Group", fontsize=13)
+    ax.set_xlabel("")
+    ax.set_ylabel(variable)
+    ax.tick_params(axis="x", rotation=20)
+
+    sns.despine(ax=ax)
+
+plt.suptitle(
+    "Cognitive and Functional Assessments by Group",
+    fontsize=16,
+    fontweight="bold"
+)
+import seaborn as sns
