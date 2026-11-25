@@ -185,4 +185,36 @@ plt.suptitle(
     fontsize=16,
     fontweight="bold"
 )
-import seaborn as sns
+
+# Create scatter plot
+plt.figure(figsize=(11, 7))
+
+sns.scatterplot(
+    data=plot_df,
+    x="Age",
+    y="MMSE",
+    hue="Comparison_Group",
+    hue_order=group_order,
+    palette=group_colors,
+    s=65,
+    alpha=0.75
+)
+
+# Labels and title
+plt.title(
+    "Age vs. Cognitive Performance Across Groups",
+    fontsize=15,
+    fontweight="bold"
+)
+
+plt.xlabel("Age (Years)", fontsize=12)
+plt.ylabel("MMSE Score", fontsize=12)
+
+plt.legend(
+    title="Participant Group",
+    loc="best"
+)
+
+sns.despine()
+plt.tight_layout()
+plt.show()
